@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f5f7;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --border: #e4e4e7;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --input-bg: #f9fafb;
+  --input-border: #e4e4e7;
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #08080c;
+  --foreground: #f8fafc;
+  --card: #111115;
+  --card-foreground: #f8fafc;
+  --border: #232329;
+  --muted: #181820;
+  --muted-foreground: #94a3b8;
+  --input-bg: #15151c;
+  --input-border: #2e2e38;
+}
+
+/* Base style resets mapping to CSS variables */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode generic overrides to guarantee all components adapt cleanly */
+.dark body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Let's target existing utility classes to make them adapt automatically */
+.dark .bg-white {
+  background-color: var(--card) !important;
+  color: var(--card-foreground) !important;
+}
+
+.dark .bg-zinc-50 {
+  background-color: var(--muted) !important;
+}
+
+.dark .bg-[#F4F5F7] {
+  background-color: var(--background) !important;
+}
+
+.dark .bg-zinc-100 {
+  background-color: var(--muted) !important;
+}
+
+.dark .border-zinc-200,
+.dark .border-zinc-100,
+.dark .border-zinc-300,
+.dark .border-zinc-200\/80 {
+  border-color: var(--border) !important;
+}
+
+/* Ensure inputs, selects, and textareas adapt */
+.dark input, 
+.dark select, 
+.dark textarea {
+  background-color: var(--input-bg) !important;
+  color: var(--foreground) !important;
+  border-color: var(--input-border) !important;
+}
+
+.dark input::placeholder, 
+.dark textarea::placeholder {
+  color: var(--muted-foreground) !important;
+  opacity: 0.6;
+}
+
+.dark .text-black,
+.dark .text-zinc-900,
+.dark .text-zinc-950,
+.dark .text-zinc-800,
+.dark .text-zinc-700 {
+  color: var(--foreground) !important;
+}
+
+.dark .text-zinc-500,
+.dark .text-zinc-600 {
+  color: var(--muted-foreground) !important;
+}
+
+.dark .text-zinc-400 {
+  color: var(--muted-foreground) !important;
+  opacity: 0.8;
+}
+
+/* Specific elements for secure settings and API configs */
+.dark .bg-purple-100 {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+  color: #c084fc !important;
+}
+
+.dark .text-purple-600 {
+  color: #c084fc !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  color: #60a5fa !important;
+}
+
+.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+}
+
+.dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #fbbf24 !important;
+}
+
+.dark .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #f87171 !important;
+}
+
+/* Unified transition for elegant theme-switching response */
+*, *::before, *::after {
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

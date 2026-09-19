@@ -1,0 +1,6 @@
+{
+  "name": "TeleSui AI Influencer & PayBot Studio",
+  "description": "AI Influencer character studio, Telegram VIP monetization suite, in-app image/video generation, face-swap engine, and SUI payment bot generator.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
